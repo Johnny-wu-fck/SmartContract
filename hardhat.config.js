@@ -1,7 +1,8 @@
 require("@nomicfoundation/hardhat-toolbox");
 + require("@nomicfoundation/hardhat-verify");
 require("@chainlink/env-enc").config()
-require("./tasks")//不用把index写出来，如果没写会自动去找这
+require("./tasks")//不用把index写出来，如果没写会自动去找index
+require("hardhat-deploy")
 
 const SEPOLIA_URL = process.env.SEPOLIA_URL
 const PRIVATE_KEY = process.env.PRIVATE_KEY
@@ -21,5 +22,13 @@ module.exports = {
   etherscan:{//用hardhat验证合约是否部署
     apiKey:ETHERSCAN_API_KEY
     
+  },
+  namedAccounts:{
+    firstAccount:{
+      default:0
+    },
+    secondAccount:{
+      default:1
+    },
   }
 };

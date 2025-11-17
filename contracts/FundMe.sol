@@ -9,7 +9,7 @@ contract FundMe{
 
     uint256 MINIMUM_VALUE = 100 * 10 ** 18;//最低转入100美元
 
-    AggregatorV3Interface internal dataFeed;
+    AggregatorV3Interface public dataFeed;
 
     uint256 constant TARGET = 100 * 10 ** 18;//值达到100美元才可提取
 
