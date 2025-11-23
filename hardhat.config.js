@@ -10,7 +10,7 @@ const PRIVATE_KEY_1 = process.env.PRIVATE_KEY_1
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY
 
 /** @type import('hardhat/config').HardhatUserConfig */
-module.exports = {
+module.exports = {//将值导出
   solidity: "0.8.28",
   networks:{
     sepolia:{
@@ -25,10 +25,10 @@ module.exports = {
   },
   namedAccounts:{
     firstAccount:{
-      default:0
+      default:0// ← 意思是：在所有网络中，firstAccount = accounts[0]
     },
     secondAccount:{
-      default:1
+      default:1// ← 意思是：在所有网络中，secondAccount = accounts[1]
     },
   }
 };

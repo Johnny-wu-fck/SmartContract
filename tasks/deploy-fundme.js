@@ -12,7 +12,7 @@ task("deploy-fundme").setAction(async(taskArgs, hre) => {
     //verify FundME
     if(hre.network.config.chainId == 11155111 && process.env.ETHERSCAN_API_KEY){
         console.log("waiting for 2 block..." );
-        await fundMe.deploymentTransaction().wait(2)//等待部署完过五个区块再验证，否则容易验证失败
+        await fundMe.deploymentTransaction().wait(3)//等待部署完过五个区块再验证，否则容易验证失败
         await verifyFundME(fundMe.target,100)//验证时间10s
     } else {
         console.log("skip verify")
